@@ -25,9 +25,9 @@ class MainActivity : AppCompatActivity() {
         progressbar_load_indicator.visibility = View.VISIBLE
     }
 
-
-    //TODO: 015 - Criar função para esconder a ProgressBar
-
+    fun hideLoadingIndicator(){
+        progressbar_load_indicator.visibility = View.GONE
+    }
 
     //TODO: 017 - Criar função para lançar a Task
 
