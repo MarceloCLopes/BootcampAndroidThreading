@@ -1,6 +1,7 @@
 package com.everis.bootcamp.threading
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -20,7 +21,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    //TODO: 014 - Criar função para exibir a ProgressBar
+    fun showLoadIndicator(){
+        progressbar_load_indicator.visibility = View.VISIBLE
+    }
 
 
     //TODO: 015 - Criar função para esconder a ProgressBar
