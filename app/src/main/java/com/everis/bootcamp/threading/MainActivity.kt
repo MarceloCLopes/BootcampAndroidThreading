@@ -1,5 +1,6 @@
 package com.everis.bootcamp.threading
 
+import android.os.AsyncTask
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -32,6 +33,24 @@ class MainActivity : AppCompatActivity() {
     //TODO: 017 - Criar função para lançar a Task
 
 
-    //TODO: 016 - Criar classe interna para rodar a tarefa assincrona
+    inner class TaskAstros() : AsyncTask<Void, Int, List<AstrosPeople>>(){
+
+        val repository = AstrosRepository()
+
+        override fun onPreExecute() {
+            super.onPreExecute()
+            showLoadIndicator()
+        }
+
+        override fun doInBackground(vararg params: Void?): List<AstrosPeople> {
+            return repository.loadData()
+        }
+
+        override fun onPostExecute(result: List<AstrosPeople>?) {
+            super.onPostExecute(result)
+            hideLoadingIndicator()
+            showData(result)
+        }
+    }
 
 }
