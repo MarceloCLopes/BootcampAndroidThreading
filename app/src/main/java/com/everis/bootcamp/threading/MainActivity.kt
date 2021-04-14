@@ -1,10 +1,7 @@
 package com.everis.bootcamp.threading
 
-import android.os.AsyncTask
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import androidx.core.view.isVisible
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -16,9 +13,12 @@ class MainActivity : AppCompatActivity() {
         //TODO: 018 - fazer o handle do clique do botão
     }
 
-
-    //TODO: 013 - Criar função para exibir os dados carregados
-
+    fun showData(list: List<AstrosPeople>?) {
+        textview_data.text = ""
+        list?.forEach { people ->
+            textview_data.append("${people.name} - ${people.craft} \n\n")
+        }
+    }
 
     //TODO: 014 - Criar função para exibir a ProgressBar
 
