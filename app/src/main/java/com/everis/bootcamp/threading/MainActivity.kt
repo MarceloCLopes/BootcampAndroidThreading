@@ -30,8 +30,10 @@ class MainActivity : AppCompatActivity() {
         progressbar_load_indicator.visibility = View.GONE
     }
 
-    //TODO: 017 - Criar função para lançar a Task
-
+    fun launchAstrosTask() {
+        val task = TaskAstros()
+        task.execute()
+    }
 
     inner class TaskAstros() : AsyncTask<Void, Int, List<AstrosPeople>>(){
 
